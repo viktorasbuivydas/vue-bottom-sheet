@@ -444,6 +444,13 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
+"@viktorasbuivydas/vue-bottom-sheet@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@viktorasbuivydas/vue-bottom-sheet/-/vue-bottom-sheet-3.0.5.tgz#9b57aa6149db3de7d24e469afde3004570376245"
+  integrity sha512-jtJQfBojbaOd0MI8QfiCU3AwfWreoBsRedjO5cOXftdNlqUgPp8HWwl/IN70b2QnUD65ugMNvroiu6qpWEmjUA==
+  dependencies:
+    hammerjs "^2.0.8"
+
 "@vitejs/plugin-vue@^4.2.3":
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-4.2.3.tgz#ee0b6dfcc62fe65364e6395bf38fa2ba10bb44b6"
