@@ -2,11 +2,7 @@
   <Teleport to="body">
     <div class="bottom-sheet" ref="bottomSheet" :aria-hidden="!showSheet" role="dialog">
       <transition>
-        <div
-          @click="clickOnOverlayHandler"
-          class="bottom-sheet__overlay"
-          v-show="overlay && showSheet"
-        />
+        <div @click="clickOnOverlayHandler" class="bottom-sheet__overlay" v-show="overlay && showSheet" />
       </transition>
       <div ref="bottomSheetContent" :class="sheetContentClasses">
         <header ref="bottomSheetHeader" class="bottom-sheet__header">
@@ -111,12 +107,14 @@ const bottomSheetDraggableArea = ref<HTMLElement | null>(null)
  */
 const isFocused = (element: HTMLElement) => document.activeElement === element
 window.addEventListener('keyup', (event: KeyboardEvent) => {
-  const isSheetElementFocused =
-    bottomSheet.value!.contains(event.target as HTMLElement) &&
+  // Check if bottomSheet.value exists before accessing contains method
+  const isSheetElementFocused = bottomSheet.value
+    ? bottomSheet.value.contains(event.target as HTMLElement) &&
     isFocused(event.target as HTMLElement)
+    : false;
 
-  if (event.key === 'Escape' && !isSheetElementFocused) {
-    close()
+  if (event.key === 'Escape' && showSheet.value) {
+    close();
   }
 })
 
@@ -401,13 +399,16 @@ defineExpose({ open, close })
       height: 8px;
       width: 8px;
     }
+
     &::-webkit-scrollbar-corner {
       display: none;
     }
+
     &:hover::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0.2);
       border-radius: 8px;
     }
+
     &::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0);
     }
