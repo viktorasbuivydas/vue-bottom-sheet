@@ -11,38 +11,16 @@
     <div class="row">
       <div class="col-md-4 col-12">
         <div class="form-check form-switch mb-3">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="flexSwitchCheckChecked"
-            v-model="overlay"
-            checked
-          />
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" v-model="overlay" checked />
           <label class="form-check-label" for="flexSwitchCheckChecked">Overlay</label>
         </div>
         <div class="form-check form-switch mb-3">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="closeSwitchCheckChecked"
-            v-model="clickToClose"
-            checked
-          />
-          <label class="form-check-label" for="closeSwitchCheckChecked"
-            >Click outside card to close</label
-          >
+          <input class="form-check-input" type="checkbox" id="closeSwitchCheckChecked" v-model="clickToClose" checked />
+          <label class="form-check-label" for="closeSwitchCheckChecked">Click outside card to close</label>
         </div>
         <div class="form-check form-switch mb-3">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="canSwipe"
-            v-model="canSwipe"
-            checked
-          />
-          <label class="form-check-label" for="canSwipe"
-          >Enable swipe to close</label
-          >
+          <input class="form-check-input" type="checkbox" id="canSwipe" v-model="canSwipe" checked />
+          <label class="form-check-label" for="canSwipe">Enable swipe to close</label>
         </div>
       </div>
       <div class="col-md-4 col-12">
@@ -54,37 +32,18 @@
       <div class="col-md-4 col-12">
         <div class="form-group mb-3">
           <label for="maxWidthInput" class="form-label">Max width (px):</label>
-          <input
-            name="maxWidthInput"
-            type="number"
-            id="maxWidthInput"
-            v-model="maxWidth"
-            class="form-control"
-          />
+          <input name="maxWidthInput" type="number" id="maxWidthInput" v-model="maxWidth" class="form-control" />
         </div>
         <div class="form-group mb-3">
           <label for="maxHeightInput" class="form-label">Max height (px):</label>
-          <input
-            name="maxHeightInput"
-            type="number"
-            id="maxHeightInput"
-            v-model="maxHeight"
-            class="form-control"
-          />
+          <input name="maxHeightInput" type="number" id="maxHeightInput" v-model="maxHeight" class="form-control" />
         </div>
       </div>
     </div>
     <button class="btn btn-primary" type="button" @click="open">Open bottom sheet</button>
-    <vue-bottom-sheet
-      :overlay-click-close="clickToClose"
-      :transition-duration="0.5"
-      :max-width="maxWidth"
-      :max-height="maxHeight"
-      :overlay="overlay"
-      :can-swipe="canSwipe"
-      :overlay-color="overlayColorSelect"
-      ref="myBottomSheet"
-    >
+    <vue-bottom-sheet :overlay-click-close="clickToClose" :transition-duration="0.5" :max-width="maxWidth"
+      :max-height="maxHeight" :overlay="overlay" :can-swipe="canSwipe" :overlay-color="overlayColorSelect"
+      ref="myBottomSheet">
       <div class="sheet-content">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime neque sed tempore ullam.
